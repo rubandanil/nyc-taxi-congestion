@@ -1,0 +1,16 @@
+# данные
+data/
+*.parquet
+*.csv
+
+# python
+.venv/
+__pycache__/
+*.pyc
+
+# jupyter
+.ipynb_checkpoints/
+
+# прочее
+.env
+.DS_Store

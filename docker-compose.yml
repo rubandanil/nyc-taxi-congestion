@@ -1,0 +1,18 @@
+services:
+  db:
+    image: postgres:16
+    container_name: taxi_db
+    environment:
+      POSTGRES_DB: taxi
+      POSTGRES_USER: taxi
+      POSTGRES_PASSWORD: taxi
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    # Postgres сортирует и строит таблицы через разделяемую память,
+    # а у Docker по умолчанию её всего 64 МБ — для десятков миллионов строк мало.
+    shm_size: 1g
+
+volumes:
+  pgdata:
